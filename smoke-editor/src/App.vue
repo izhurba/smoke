@@ -1,12 +1,12 @@
 <template>
   <div id="app">
-    <navbar></navbar>
-    <router-view></router-view>
+    <navbar />
+    <router-view />
   </div>
 </template>
 
 <style>
-@import '../node_modules/bulma/css/bulma.css'
+@import '../node_modules/bulma/css/bulma.css';
 </style>
 
 

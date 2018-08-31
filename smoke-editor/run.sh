@@ -1,3 +1,3 @@
-#!/bin/bash
-yarn
-HOST=0.0.0.0 yarn dev
+#!/bin/sh
+npm install
+HOST=0.0.0.0 npm run serve

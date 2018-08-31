@@ -16,12 +16,7 @@ Vue.http.headers.common['Authorization'] = `Bearer ${localStorage.getItem('id_to
 // Check the user's auth status when the app starts
 Auth.checkAuth()
 
-/* eslint-disable no-new */
-const app = new Vue({
-  el: '#app',
+new Vue({
   router,
-  template: '<App/>',
-  components: { App }
-})
-
-export default app
+  render: h => h(App)
+}).$mount('#app')

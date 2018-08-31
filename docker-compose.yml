@@ -1,10 +1,9 @@
 version: '3'
 services:
   web:
-    image: node:latest
+    image: node:alpine
     entrypoint:
-      - bash
-      - -l
+      - ash
       - run.sh
     volumes:
       - ./smoke-editor:/smoke
@@ -15,10 +14,9 @@ services:
        - backend
     tty: true
   backend:
-    image: python:3.6
+    image: python:alpine3.8
     entrypoint:
-      - bash
-      - -l
+      - ash
       - run.sh
     volumes:
       - ./smoke-backend:/smoke

@@ -1,9 +1,9 @@
 <template>
-  <columns>
-    <column is-4 is-offset-4>
+  <b-columns>
+    <b-column is-4 is-offset-4>
       <div id="main-login">
-        <columns>
-          <column is-5>
+        <b-columns>
+          <b-column is-5>
             <h2>Log In</h2>
             <h3 v-if="error !== ''">{{ geterror() }}</h3>
             <div class="form-group">
@@ -23,16 +23,16 @@
               >
             </div>
             <b-button id="submit" is-primary @click="submit()">Login</b-button>
-          </column>
+          </b-column>
           <column is-8>
             <h1>
               TODO: Put social login buttons
             </h1>
           </column>
-        </columns>
+        </b-columns>
       </div>
-    </column>
-  </columns>
+    </b-column>
+  </b-columns>
 </template>
 
 <style>
