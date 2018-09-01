@@ -22,7 +22,7 @@
 <script>
 export default {
   created () {
-    this.$router.options.routes.forEach(route => {
+    (this.$router.options.routes || []).forEach(route => {
       if (!/:/.test(route.path)) {
         this.links.push({
           name: route.name,

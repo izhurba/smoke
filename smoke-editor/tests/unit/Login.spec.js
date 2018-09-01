@@ -1,10 +1,12 @@
-import Login from '@/components/Login'
+import Login from '@/views/Login'
 import moxios from 'moxios'
-import { expectAsync, mount } from './utils'
+import Bulma from 'vue-bulma-components'
+import {expectAsync, mount} from './utils'
+import {expect} from 'chai'
 
 describe('Login.vue', () => {
   it('should render correct contents', () => {
-    const vm = mount(Login)
+    const vm = mount(Login, [Bulma])
     expect(vm.$el.querySelector('div h2').textContent)
       .to.equal('Log In')
   })
@@ -12,7 +14,8 @@ describe('Login.vue', () => {
   describe('Auth', () => {
 
     beforeEach(() => {
-      window.onbeforeunload = () => {}
+      window.onbeforeunload = () => {
+      }
       moxios.install()
     })
 
@@ -21,7 +24,7 @@ describe('Login.vue', () => {
     })
 
     it('should set error message on 401', done => {
-      const vm = mount(Login)
+      const vm = mount(Login, [Bulma])
       vm.$data.credentials.username = 'bogus'
       vm.$data.credentials.password = 'bogus'
       vm.submit()
@@ -37,7 +40,7 @@ describe('Login.vue', () => {
     })
 
     it('should set localStorage on 200', done => {
-      const vm = mount(Login)
+      const vm = mount(Login, [Bulma])
       vm.$data.credentials.username = 'bogus'
       vm.$data.credentials.password = 'bogus'
       vm.submit()

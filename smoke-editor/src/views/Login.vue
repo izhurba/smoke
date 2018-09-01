@@ -24,11 +24,11 @@
             </div>
             <b-button id="submit" is-primary @click="submit()">Login</b-button>
           </b-column>
-          <column is-8>
+          <b-column is-8>
             <h1>
               TODO: Put social login buttons
             </h1>
-          </column>
+          </b-column>
         </b-columns>
       </div>
     </b-column>

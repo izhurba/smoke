@@ -1,5 +1,5 @@
 #!/bin/bash
-yarn global add codecov
-yarn
-yarn test:unit # should eventually be `yarn test`
+npm install -g codecov
+npm install
+npm run test:unit
 codecov || true # for local tests
