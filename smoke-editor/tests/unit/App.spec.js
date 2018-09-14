@@ -1,7 +1,7 @@
 import App from '@/App'
 import Router from 'vue-router'
-import {expect} from 'chai'
 import Bulma from 'vue-bulma-components'
+import {expect} from 'chai'
 import {mount, storageMock} from './utils'
 
 describe('App.vue', () => {
@@ -12,7 +12,7 @@ describe('App.vue', () => {
 
   it('should render correct contents', () => {
     const vm = mount(App, [Bulma], {router: new Router()})
-    expect(vm.user.authenticated).to.be.equal(false)
+    expect(vm.user.authenticated).to.equal(false)
   })
 
   it('should not logout unless logged in', () => {
@@ -28,7 +28,7 @@ describe('App.vue', () => {
         }
       ]
     })
-    const vm = mount(App, [Bulma],  {router: router})
+    const vm = mount(App, [Bulma], {router: router})
     const loggedIn = vm.user.authenticated
     vm.logout()
     expect(vm.user.authenticated).to.equal(loggedIn)

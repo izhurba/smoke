@@ -8,7 +8,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "nyc vue-cli-service test:unit"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -24,8 +24,54 @@
     "@vue/cli-plugin-unit-mocha": "^3.0.1",
     "@vue/cli-service": "^3.0.1",
     "@vue/test-utils": "^1.0.0-beta.20",
+    "babel-plugin-istanbul": "^5.0.1",
     "chai": "^4.1.2",
+    "istanbul-instrumenter-loader": "^3.0.1",
     "moxios": "^0.4.0",
+    "nyc": "^13.0.1",
     "vue-template-compiler": "^2.5.17"
-  }
+  },
+  "nyc": {
+    "register": "babel-register",
+    "include": [
+      "src/**/*.{js,vue}"
+    ],
+    "exclude": [
+      "src/*.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text",
+      "text-summary"
+    ],
+    "extension": [
+      ".js",
+      ".vue"
+    ],
+    "all": true
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
 }

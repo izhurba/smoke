@@ -60,7 +60,7 @@ export default {
 
   methods: {
     submit () {
-      Auth.login(this, this.credentials)
+      Auth.login(this, this.credentials, '/')
     },
     geterror () {
       return this.error.msg || this.error.message || ''

@@ -7,12 +7,10 @@ services:
       - run.sh
     volumes:
       - ./smoke-editor:/smoke
+      - /smoke/node_modules
     ports:
       - "8080:8080"
     working_dir: /smoke
-    depends_on:
-       - backend
-    tty: true
   backend:
     image: python:alpine3.8
     entrypoint:
@@ -23,4 +21,3 @@ services:
     ports:
       - "8000:8000"
     working_dir: /smoke
-    tty: true

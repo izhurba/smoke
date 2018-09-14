@@ -6,7 +6,7 @@ import {mount} from './utils'
 
 describe('Navbar.vue', () => {
   it('should render correct contents', () => {
-    const vm = mount(Navbar, [Bulma], {router: new Router() })
+    const vm = mount(Navbar, [Bulma], {router: new Router()})
     expect(vm.$el.querySelector('.navbar-brand')).to.not.equal(null)
   })
   it('should render correct provided routes', () => {
@@ -26,7 +26,7 @@ describe('Navbar.vue', () => {
         }
       ]
     })
-    const vm = mount(Navbar, [Bulma], {router: router })
+    const vm = mount(Navbar, [Bulma], {router: router})
     expect(vm.$el.querySelector('.navbar-brand').children).to.not.equal([])
     expect(vm.$el.querySelector('.navbar-brand').children.length).to.equal(3)
   })

@@ -1,34 +1,34 @@
 <template>
   <div id="app">
-    <navbar />
-    <router-view />
+    <navbar/>
+    <router-view/>
   </div>
 </template>
 
 <style>
-@import '../node_modules/bulma/css/bulma.css';
+  @import '../node_modules/bulma/css/bulma.css';
 </style>
 
 
 <script>
-import Navbar from '@/components/Navbar'
-import Auth from '@/auth'
+  import Navbar from '@/components/Navbar'
+  import Auth from '@/auth'
 
-export default {
-  name: 'app',
-  components: {
-    Navbar
-  },
-  data () {
-    return {
-      user: Auth.user
-    }
-  },
+  export default {
+    name: 'app',
+    components: {
+      Navbar
+    },
+    data () {
+      return {
+        user: Auth.user
+      }
+    },
 
-  methods: {
-    logout () {
-      Auth.logout()
+    methods: {
+      logout () {
+        Auth.logout()
+      }
     }
   }
-}
 </script>

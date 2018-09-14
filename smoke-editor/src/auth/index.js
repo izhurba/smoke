@@ -1,5 +1,5 @@
 import axios from 'axios'
-import Router from '@/router'
+import router from '@/router'
 
 const API_URL = 'http://localhost:8000/'
 const LOGIN_URL = API_URL + 'auth/login'
@@ -25,7 +25,7 @@ export default {
 
         this.user.authenticated = true
         if (redirect) {
-          Router.go(redirect)
+          router.push(redirect)
         }
       },
       err => {

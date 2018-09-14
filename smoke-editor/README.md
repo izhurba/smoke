@@ -27,8 +27,3 @@ npm run lint
 ```
 npm run test:unit
 ```
-
-### Run your end-to-end tests
-```
-npm run test:e2e
-```
